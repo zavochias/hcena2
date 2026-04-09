@@ -1,29 +1,23 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
-    "name": "bombparty-word-picker",
-    "version": "1.0.1",
-    "description": "makes you better at bomb party",
-    "manifest_version": 3,
-    "author": "zavokdev",
-    "icons": {
-        "128": "/images/icon128.png"
-    },
-    "action":{
-        "default_popup": "index.html",
-        "default_title": "Window"
-    },
-    "content_scripts": [
-        {
-          "matches": ["https://*.jklm.fun/*", "https://jklm.fun/*"],
-          "js": ["bomba.js"],
-          "all_frames": true
-        }
-      ],
-    "permissions": [
-        "tabs"
-    ],
-    "host_permissions": [
-        "https://*.jklm.fun/*"
-    ]
+  "name": "bombparty-word-picker",
+  "version": "1.0.1",
+  "description": "Makes you better at Bomb Party",
+  "manifest_version": 3,
+  "author": "zavokdev",
+  "icons": {
+    "128": "images/icon128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "BombParty Helper"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.jklm.fun/*", "*://jklm.fun/*"],
+      "js": ["bomba.js"],
+      "all_frames": false
+    }
+  ],
+  "permissions": ["tabs"],
+  "host_permissions": ["*://*.jklm.fun/*", "*://jklm.fun/*"]
 }
